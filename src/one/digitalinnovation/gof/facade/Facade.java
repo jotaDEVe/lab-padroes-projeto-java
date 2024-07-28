@@ -5,10 +5,10 @@ import subsistema2.cep.CepApi;
 
 public class Facade {
 
-	public void migrarCliente(String nome, String cep) {
-		String cidade = CepApi.getInstancia().recuperarCidade(cep);
-		String estado = CepApi.getInstancia().recuperarEstado(cep);
+	public void migrateCustomer(String name, String cep) {
+		String city = CepApi.getInstance().recoverCity(cep);
+		String state = CepApi.getInstance().recoverState(cep);
 		
-		CrmService.gravarCliente(nome, cep, cidade, estado);
+		CrmService.saveCustomer(name, cep, city, state);
 	}
 }

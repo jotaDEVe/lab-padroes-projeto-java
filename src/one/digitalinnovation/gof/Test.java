@@ -4,11 +4,11 @@ import one.digitalinnovation.gof.facade.Facade;
 import one.digitalinnovation.gof.singleton.SingletonEager;
 import one.digitalinnovation.gof.singleton.SingletonLazy;
 import one.digitalinnovation.gof.singleton.SingletonLazyHolder;
-import one.digitalinnovation.gof.strategy.Comportamento;
-import one.digitalinnovation.gof.strategy.ComportamentoAgressivo;
-import one.digitalinnovation.gof.strategy.ComportamentoDefensivo;
-import one.digitalinnovation.gof.strategy.ComportamentoNormal;
-import one.digitalinnovation.gof.strategy.Robo;
+import one.digitalinnovation.gof.strategy.AgressiveBehavior;
+import one.digitalinnovation.gof.strategy.Behavior;
+import one.digitalinnovation.gof.strategy.DefensiveBehavior;
+import one.digitalinnovation.gof.strategy.NormalBehavior;
+import one.digitalinnovation.gof.strategy.Robot;
 
 public class Test {
 
@@ -16,42 +16,42 @@ public class Test {
 		
 		// Singleton
 		
-		SingletonLazy lazy = SingletonLazy.getInstancia();
+		SingletonLazy lazy = SingletonLazy.getInstance();
 		System.out.println(lazy);
-		lazy = SingletonLazy.getInstancia();
+		lazy = SingletonLazy.getInstance();
 		System.out.println(lazy);
 		
-		SingletonEager eager = SingletonEager.getInstancia();
+		SingletonEager eager = SingletonEager.getInstance();
 		System.out.println(eager);
-		eager = SingletonEager.getInstancia();
+		eager = SingletonEager.getInstance();
 		System.out.println(eager);
 		
-		SingletonLazyHolder lazyHolder = SingletonLazyHolder.getInstancia();
+		SingletonLazyHolder lazyHolder = SingletonLazyHolder.getInstance();
 		System.out.println(lazyHolder);
-		lazyHolder = SingletonLazyHolder.getInstancia();
+		lazyHolder = SingletonLazyHolder.getInstance();
 		System.out.println(lazyHolder);
 		
 		// Strategy
 		
-		Comportamento defensivo = new ComportamentoDefensivo();
-		Comportamento normal = new ComportamentoNormal();
-		Comportamento agressivo = new ComportamentoAgressivo();
+		Behavior defensive = new DefensiveBehavior();
+		Behavior normal = new NormalBehavior();
+		Behavior agressive = new AgressiveBehavior();
 		
-		Robo robo = new Robo();
-		robo.setComportamento(normal);
-		robo.mover();
-		robo.mover();
-		robo.setComportamento(defensivo);
-		robo.mover();
-		robo.setComportamento(agressivo);
-		robo.mover();
-		robo.mover();
-		robo.mover();
+		Robot robot = new Robot();
+		robot.setBehavior(normal);
+		robot.move();
+		robot.move();
+		robot.setBehavior(defensive);
+		robot.move();
+		robot.setBehavior(agressive);
+		robot.move();
+		robot.move();
+		robot.move();
 		
 		// Facade
 		
 		Facade facade = new Facade();
-		facade.migrarCliente("Venilton", "14801788");
+		facade.migrateCustomer("Venilton", "14801788");
 	}
 
 }

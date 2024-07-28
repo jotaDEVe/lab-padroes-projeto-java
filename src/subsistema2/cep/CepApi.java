@@ -2,21 +2,21 @@ package subsistema2.cep;
 
 public class CepApi {
 
-	private static CepApi instancia = new CepApi();
+	private static CepApi instance = new CepApi();
 
 	private CepApi() {
 		super();
 	}
 
-	public static CepApi getInstancia() {
-		return instancia;
+	public static CepApi getInstance() {
+		return instance;
 	}
 	
-	public String recuperarCidade(String cep) {
+	public String recoverCity(String cep) {
 		return "Araraquara";
 	}
 	
-	public String recuperarEstado(String cep) {
+	public String recoverState(String cep) {
 		return "SP";
 	}
 }

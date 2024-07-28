@@ -1,22 +1,22 @@
 package one.digitalinnovation.gof.singleton;
 
 /**
- * Singleton "preguiçoso".
- * 
+ * Singleton "preguiï¿½oso".
+ *
  * @author falvojr
  */
 public class SingletonLazy {
 
-	private static SingletonLazy instancia;
+	private static SingletonLazy instance;
 	
 	private SingletonLazy() {
 		super();
 	}
 	
-	public static SingletonLazy getInstancia() {
-		if (instancia == null) {
-			instancia = new SingletonLazy();
+	public static SingletonLazy getInstance() {
+		if (instance == null) {
+			instance = new SingletonLazy();
 		}
-		return instancia;
+		return instance;
 	}
 }

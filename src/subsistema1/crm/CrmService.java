@@ -6,11 +6,11 @@ public class CrmService {
 		super();
 	}
 	
-	public static void gravarCliente(String nome, String cep, String cidade, String estado) {
-		System.out.println("Cliente salvo no sistema de CRM:");
-		System.out.println(nome);
+	public static void saveCustomer(String name, String cep, String city, String state) {
+		System.out.println("Customer saved in the CRM system:");
+		System.out.println(name);
 		System.out.println(cep);
-		System.out.println(cidade);
-		System.out.println(estado);
+		System.out.println(city);
+		System.out.println(state);
 	}
 }
